@@ -1,0 +1,3 @@
+#accessInfo.textToSpeechPermission
+book_df['accessInfo.textToSpeechPermission'] = book_df['accessInfo.textToSpeechPermission'].str.replace("ALLOWED","Audiobook Available", regex=True)
+book_df['accessInfo.textToSpeechPermission'] = book_df['accessInfo.textToSpeechPermission'].str.replace("Audiobook Available_FOR_ACCESSIBILITY","Audiobook Unavailable", regex=True)
