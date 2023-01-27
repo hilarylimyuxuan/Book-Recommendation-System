@@ -2,9 +2,6 @@
 import streamlit as st
 
 
-#header
-st.title("What's Next, Shakespeare?")
-
 
 #import library
 import pandas as pd
@@ -14,35 +11,32 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import seaborn as sns
 import random
+import pickle
+from sklearn.metrics.pairwise import cosine_similarity
+
 #load data
 cleaned_df = pd.read_csv("Books Subset.csv")
 
 #build dashboard
 add_sidebar=st.sidebar.selectbox('Navigation', ('Project Information','Book Data Facts','Book Recommendation Engine'))
 
+st.title("What's Next, Shakespeare? :books: :apple:")
+
 #condition
 if add_sidebar == 'Project Information':
     st.subheader("Weekly Top Selling Books")
     st.image('book_image.png',use_column_width=True)
-    #table of content
-    st.subheader('Table of Content')
-    st.write('1. Project background - Description of the Data Science Project')
-    st.write('2. Project Objectives')
-    st.write('3. Data Modelling')
-    st.write('4. Data Interpretation')
-    st.write('5. Deployment of Data Product')
-    st.write('6. Insights and Conclusion')
-    st.write('7. References')
+
     #project background
     st.subheader('Project Background')
-    st.write('Write intro here!')
-
+    st.markdown("<div style='text-align: justify;'>This project focuses on building a recommender system for books through content-based filtering algorithm and is named What's Next, Shakespeare?. This system serves the purpose of narrowing down the options available to users by predicting and making suggestions on books that they may be interested in. It will also benefit book sellers by boosting their book sales with the increase in public exposure, gaining more profits in return.</div>", unsafe_allow_html=True)
+    st.write ('\n') 
+       
     st.subheader('Project Objectives')
-    st.write('In this project, our aims are to:')
-    st.write('1. Explore the best avenue of data collection which will result in a wide variety of books')
-    st.write('2. Determine the key features of relevancy that will yield personalized recommendations to users')
-    st.write('3. Evaluate different algorithms and techniques to build the content-based filtering book recommendation system')
-    st.write('4. Deploy the content-based filtering book recommendation system in Streamlit App ')
+    st.write('1) Explore the best avenue of data collection which will result in a wide variety of books')
+    st.write('2) Determine the key features of relevancy that will yield personalized recommendations to users') 
+    st.write('3) Evaluate different algorithms and techniques to build the content-based filtering book recommendation system') 
+    st.write('4) Successfully deploy an easily accessible webapp for the created model') 
 
 if add_sidebar == 'Book Data Facts':
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -414,8 +408,7 @@ if add_sidebar == 'Book Recommendation Engine':
         # df_filtered = df_filtered.reset_index(drop=True) 
         # st.write(df_filtered[df_filtered['Author_Name'].isin(author_select)])
 
-        import pickle
-
+    
         # Use pickle to load the pre-trained model.
         with open(f'book_kmeans_model.pkl', 'rb') as f:
             model = pickle.load(f)
@@ -435,7 +428,7 @@ if add_sidebar == 'Book Recommendation Engine':
         book_with_cluster_df.rename(columns={ book_with_cluster_df.columns[0]: "idx" }, inplace = True)
         book_with_cluster_df.rename(columns={ book_with_cluster_df.columns[1]: "title" }, inplace = True)
 
-        from sklearn.metrics.pairwise import cosine_similarity
+    
         
     # Function to recommend books
         def recommendBooks(genres, authors):
@@ -487,7 +480,6 @@ if add_sidebar == 'Book Recommendation Engine':
         user_top10_recommended_books = recommendBooks(user_genres, user_authors)
         user_top10_recommended_books_df = pd.DataFrame(user_top10_recommended_books)
         user_top10_recommended_books_df.rename(columns={user_top10_recommended_books_df.columns[0]: "Book Title"}, inplace = True)
-        user_top10_recommended_books_df.sort_values("Book Title",ascending = True, inplace = True)
+        # user_top10_recommended_books_df.sort_values("Book Title",ascending = True, inplace = True)
         st.write("Here are some recommendations for you.")
         st.write(user_top10_recommended_books_df)
-# df = df.rename(columns={'old_name': 'new_name'})
