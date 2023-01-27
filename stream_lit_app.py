@@ -15,6 +15,9 @@ import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
 #load data
+# url = 'https://drive.google.com/file/d/1MUVkE5u4aU4e0EzYs9xpVJ0AYrjOcKai/view?usp=share_link'
+# path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
+# cleaned_df = pd.read_csv(path)
 cleaned_df = pd.read_csv("Books Subset.csv")
 
 #build dashboard
@@ -422,6 +425,9 @@ if add_sidebar == 'Book Recommendation Engine':
             svd_model = pickle.load(f)
         
         # read csv file with segments
+        # url2 = 'https://drive.google.com/file/d/1YkpmzyCQE-Kz4ahf2nXyZTvSvPylLXX9/view?usp=share_link'
+        # path2 = 'https://drive.google.com/uc?export=download&id='+url2.split('/')[-2]
+        # book_with_cluster_df = pd.read_csv(path2)
         book_with_cluster_df = pd.read_csv("book segments.csv")
 
         # rename the first and second columns
