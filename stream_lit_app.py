@@ -42,7 +42,7 @@ if add_sidebar == 'Project Information':
     st.write('In this project, our aims are to: \
             1. Explore the best avenue of data collection which will result in a wide variety of books \
             2. Determine the key features of relevancy that will yield personalized recommendations to users \
-            3. Evaluate different algorithms and techniques to build the content-based filtering book recommendation system)
+            3. Evaluate different algorithms and techniques to build the content-based filtering book recommendation system')
 
 if add_sidebar == 'Book Data Facts':
     st.set_option('deprecation.showPyplotGlobalUse', False)
