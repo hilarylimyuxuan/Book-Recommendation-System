@@ -1,4 +1,4 @@
-## Book Recommendation System
+# Book Recommendation System - What's Next, Shakespeare?
 ## Step-by-Step guide for Streamlit app
 ### 1.	Development Environment
 Prior to that, a development environment is set up. This includes:
