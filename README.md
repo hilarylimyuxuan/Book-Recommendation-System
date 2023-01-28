@@ -1,5 +1,5 @@
 # Book Recommendation System - What's Next, Shakespeare?
-## File reference:\
+## File reference:
 ### Group Assignment 2
 1. Modelling code: Modelling.ipynb
 2. Dataset for Streamlit web app: Books_Subset.zip
@@ -9,7 +9,7 @@
        c. book_tfidf.pkl
 4. Deployment: stream_lit_app.py
 
-Group Assignment 1
+### Group Assignment 1
 1. Code: Book Recommendation System - Google Book.ipynb
 2. Dataset: Books Dataset.zip
 
