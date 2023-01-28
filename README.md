@@ -1,4 +1,19 @@
 # Book Recommendation System - What's Next, Shakespeare?
+File reference:
+Group Assignment 2
+1. Modelling code: Modelling.ipynb
+2. Dataset for Streamlit web app: Books_Subset.zip
+3. Pickle Format Extension for web app:
+       a. book_kmeans_model.pkl
+       b. book_ssvd.pkl
+       c. book_tfidf.pkl
+4. Deployment: stream_lit_app.py
+
+Group Assignment 1
+1. Code: Book Recommendation System - Google Book.ipynb
+2. Dataset: Books Dataset.zip
+
+1. Modelling: 
 ## Step-by-Step guide for Streamlit app
 ### 1.	Development Environment
 Set up a development environment. This includes:\
