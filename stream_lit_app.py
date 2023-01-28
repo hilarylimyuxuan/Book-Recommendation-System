@@ -15,9 +15,6 @@ import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
 #load data
-# url = 'https://drive.google.com/file/d/1MUVkE5u4aU4e0EzYs9xpVJ0AYrjOcKai/view?usp=share_link'
-# path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
-# cleaned_df = pd.read_csv(path)
 cleaned_df = pd.read_csv("Books Subset.csv")
 
 #build dashboard
@@ -342,6 +339,10 @@ if add_sidebar == 'Book Data Facts':
 
 if add_sidebar == 'Book Recommendation Engine':
     st.subheader('Start searching for your preferred books here!')
+    st.write ('This engine will recommend the Top 10 books that are similar to your collective stated preferences.')
+    st.write ('You may input between 1 to 5 choices, your ranking will not affect the results.')
+    st.write ('\n')
+
     #Genre Selection
 
     # Create a dictionary of data
@@ -404,14 +405,7 @@ if add_sidebar == 'Book Recommendation Engine':
 
     # If author_select option is not empty, display it
     if  author_select:
-        # df_filtered.rename(columns = {'volumeInfo.title':'Book_Title', \
-        #                     'volumeInfo.categories':'Book_Genre', \
-        #                     'volumeInfo.authors':'Author_Name'}
-        #                 , inplace = True)
-        # df_filtered = df_filtered.reset_index(drop=True) 
-        # st.write(df_filtered[df_filtered['Author_Name'].isin(author_select)])
 
-    
         # Use pickle to load the pre-trained model.
         with open(f'book_kmeans_model.pkl', 'rb') as f:
             model = pickle.load(f)
@@ -425,9 +419,6 @@ if add_sidebar == 'Book Recommendation Engine':
             svd_model = pickle.load(f)
         
         # read csv file with segments
-        # url2 = 'https://drive.google.com/file/d/1YkpmzyCQE-Kz4ahf2nXyZTvSvPylLXX9/view?usp=share_link'
-        # path2 = 'https://drive.google.com/uc?export=download&id='+url2.split('/')[-2]
-        # book_with_cluster_df = pd.read_csv(path2)
         book_with_cluster_df = pd.read_csv("book segments.csv")
 
         # rename the first and second columns
