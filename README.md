@@ -1,10 +1,10 @@
 # Book Recommendation System - What's Next, Shakespeare?
 ## Step-by-Step guide for Streamlit app
 ### 1.	Development Environment
-Prior to that, a development environment is set up. This includes:
-a.	installing conda
-b.	creating new conda environment 
-c.	activating conda environment
+Set up a development environment. This includes:\
+a.	installing conda\
+b.	creating new conda environment \
+c.	activating conda environment\
 d.	install Streamlit package 
 ### 2.	Integrated Development Environment
 A Python file is created in Integrated Development Environment. For this project, Visual Studio Code is created and named under stream_lit_app.py. 
