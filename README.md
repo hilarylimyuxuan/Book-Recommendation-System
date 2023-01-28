@@ -13,7 +13,6 @@
 1. Code: Book Recommendation System - Google Book.ipynb
 2. Dataset: Books Dataset.zip
 
-1. Modelling: 
 ## Step-by-Step guide for Streamlit app
 ### 1.	Development Environment
 Set up a development environment. This includes:\
